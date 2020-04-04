@@ -1,0 +1,35 @@
+<%- include('../../partials/header') %>
+<div class="container">
+	<div class="row">
+		<h1 style="text-align: center">
+			Create a new event
+		</h1>
+	<div style="width: 35%; margin: 25px auto">
+		<form action="/coding" method="POST">
+		<div class="form-group">
+			<input class="form-control" type="text" name="name" placeholder="Name">
+        </div>
+        <div class="form-group">
+			<input class="form-control" type="text" name="venue" placeholder="Venue">
+        </div>
+        <div class="form-group">
+			<input class="form-control" type="date" name="date" placeholder="date" >
+        </div>
+		<div class="form-group">
+			<input class="form-control" type="text" name="description" placeholder="Description">
+        </div>
+        <div class="form-group">
+			<input class="form-control" type="url" name="registration_link" placeholder="Registration link">
+		</div>
+		<div class="form-group">	
+			<button class="btn btn-lg btn-primary btn-block">
+				Submit!
+			</button>
+		</div>	
+		</form>
+		<a href="/coding">Go Back</a>
+	</div>
+</div>
+	</div>
+
+ <%- include('../../partials/footer') %>
