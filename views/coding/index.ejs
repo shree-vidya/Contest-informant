@@ -1,0 +1,30 @@
+<%- include('../partials/header-index') %>
+
+<div class="container">
+    <header class="jumbotron row text-center" style="background-image: url(https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX23310840.jpg);">
+         <h1><i class="fa fa-code" aria-hidden="true"></i>Coding competitions</h1>
+        <h3>Keep calm and keep coding</h3>
+        <p>
+            <a class="newEvent btn btn-primary btn-lg" href="/coding/new">Add new event</a>	
+        </p>
+    </header>
+
+    <div class="container">
+    <% events.forEach(function(event){ %>
+    <div class="card">
+        <div class="card-header">
+           <h2><%= event.name %> </h2> 
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">Hosted by <%= event.venue %></h4>
+          <h4 class="card-text">The event is going to be held on <%= event.date %></h4>
+         <p> <a href="/coding/<%= event._id %>" class="detail btn btn-small btn-primary">More details</a> </p>
+        </div>
+    </div>
+    <% }); %>
+    </div>
+    
+</div>
+
+<%- include('../partials/footer') %>
+

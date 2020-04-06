@@ -1,7 +1,8 @@
-<%- include('../../partials/header') %>
+<%- include('../partials/header-form') %>
+
 <div class="container">
-	<div class="row">
-		<h1 style="text-align: center">
+	<div class="row form-header">
+		<h1>
 			Create a new event
 		</h1>
 	<div style="width: 35%; margin: 25px auto">
@@ -13,7 +14,7 @@
 			<input class="form-control" type="text" name="venue" placeholder="Venue">
         </div>
         <div class="form-group">
-			<input class="form-control" type="date" name="date" placeholder="date" >
+			<input class="form-control" type="text" name="date" placeholder="Date(DD/MM/YYYY)" >
         </div>
 		<div class="form-group">
 			<input class="form-control" type="text" name="description" placeholder="Description">
@@ -27,9 +28,9 @@
 			</button>
 		</div>	
 		</form>
-		<a href="/coding">Go Back</a>
+		<h4>	<a style="color: black" href="/coding">Go Back</a> </h4>
 	</div>
 </div>
 	</div>
 
- <%- include('../../partials/footer') %>
+ <%- include('../partials/footer') %>

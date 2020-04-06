@@ -1,0 +1,28 @@
+<%- include('../partials/header-show') %>
+
+
+<div class="container show">
+    <h1><%= event.name %></h1>
+    <p><strong>Venue :</strong> <%= event.venue %></p>
+
+    <p><strong>Date :</strong> <%= event.date %></p>
+
+    <p><strong>Description : </strong> <%= event.description %></p>
+
+    <p><strong>Registration link:</strong> <a href="<%= event.registration_link %>"><%= event.registration_link %></a></p>
+
+    <p style="text-align-last: right;"><strong>Submitted by :</strong>  <%= event.author.username %></p>
+
+    <% if(currentuser && event.author.id.equals(currentuser._id)){ %>
+        <button class="btn btn-outline btn-light btn-lg" ><a style="color:#000;" href="/coding/<%= event._id%>/edit">Edit</a></button>
+        <form class="delete-form" style="color:#000;" action="/coding/<%= event._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-outline btn-light btn-lg">
+                Delete 
+            </button>
+        </form>
+    <% } %>
+    <h4> <a style="color:white; text-align:center;" href="/coding">Go Back</a> </h4>
+</div>
+
+<%- include('../partials/footer') %>
+

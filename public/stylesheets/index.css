@@ -1,0 +1,39 @@
+
+.jumbotron {
+    opacity:0.9;
+}
+
+h1 {
+    font-family: initial;
+    color: #000;
+}
+
+
+.newEvent {
+    background-color: #00264d;
+}
+
+.container {
+    margin-bottom: 3em;
+}
+
+.card{
+    padding: 1em; 
+    width: 75em; 
+    border: inset; 
+    margin: 1em;
+     background-color:  #e3f2fd; 
+     text-align: center;
+}
+
+.card-header {
+    font-family: fantasy;
+}
+
+.card-body {
+    margin-top: 1em;
+}
+
+.detail {
+    background-color: #004080;
+}
