@@ -61,9 +61,7 @@ app.use(culturalroutes);
 app.use(generalroutes);
 
 
-app.listen(3000,function(err){
-    if(err) {
-        console.log(err)
-    }
-	console.log("started!!!");
-})
+var port = process.env.PORT || 3000;
+app.listen(port, function () {
+  console.log("Server Has Started!");
+});
