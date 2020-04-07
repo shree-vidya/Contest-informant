@@ -6,7 +6,7 @@ body {
     z-index: 1;
     position: relative;
     text-align: center;
-    padding-top: 30vh;
+    padding-top: 20vh;
   }
   
   #landing-header h1 {
@@ -14,9 +14,16 @@ body {
     font-weight: 700;
     font-family: initial;
     color: white;
-    text-shadow: 2px 2px 8px rgb(85, 140, 204);
+    text-shadow: 2px 2px 6px rgb(85, 140, 204);
     border: powderblue;
-    padding-bottom: .75em;
+  }
+
+  #landing-header h2 {
+    font-weight: 400;
+    font-family: initial;
+    color: white;
+    text-shadow: 2px 2px 6px rgb(85, 140, 204);
+    padding-bottom: .3em;
   }
   
   .but {
@@ -71,7 +78,7 @@ body {
     animation-delay: 05s; 
   }
   .slideshow li:nth-child(3) { 
-    background-image: url(https://images.unsplash.com/photo-1551712485-546d3d414701?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+    background-image: url(https://images.unsplash.com/photo-1583558952124-8a5c7f29ab35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
     animation-delay: 10s; 
   }
   .slideshow li:nth-child(4) { 
@@ -85,7 +92,7 @@ body {
   
   @keyframes imageAnimation { 
     0% { 
-      opacity: 0; 
+      opacity: .05; 
       animation-timing-function: ease-in;
     }
     10% {

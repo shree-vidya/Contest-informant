@@ -1,11 +1,11 @@
 <%- include('../partials/header-index') %>
 
 <div class="container">
-    <header class="jumbotron row text-center" style="background-image: url(https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX23310840.jpg);">
-         <h1><i style="font-size: .7em;" class="fa fa-code" aria-hidden="true"></i> Coding competitions</h1>
-        <h3>Keep calm and keep coding</h3>
+    <header class="jumbotron row text-center" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR7ObTT_l7fLfLSv9mUQ-2sr_nIEtl6eh25sj3XYJPxoR1vDTnl&usqp=CAU);">
+         <h1><i class="fa fa-futbol-o" aria-hidden="true"></i>  General competitions</h1>
+        <h3>Time to follow your passion</h3>
         <p>
-            <a class="newEvent btn btn-primary btn-lg" href="/coding/new">Add new event</a>	
+            <a class="newEvent btn btn-primary btn-lg" href="/general/new">Add new event</a>	
         </p>
     </header>
 
@@ -20,7 +20,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Hosted by <%= event.venue %></h4>
                         <h4 class="card-text">The event is going to be held on <%= event.date %></h4>
-                        <p> <a href="/coding/<%= event._id %>" class="detail btn btn-small btn-primary">More details</a> </p>
+                        <p> <a href="/general/<%= event._id %>" class="detail btn btn-small btn-primary">More details</a> </p>
                      </div>
                 </div>
             <% }); %>

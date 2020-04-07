@@ -15,7 +15,8 @@ background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3
 h1 {
     text-align: center;
     margin-bottom: 1.5em;
-    
+    font-family: 'IM Fell French Canon SC', serif;
+    font-size: 3em;
 }
 
 h4 {
@@ -27,19 +28,25 @@ button {
     margin: 1em;
 }
 
-.show {
-    color: ivory;
+.container{
+    justify-content: center;
+    padding: auto 5em;
     background-color: black;
+    color: ivory;
     opacity: 0.7;
-    margin: 3em;
-    margin-left: 15em;
-    margin-right: 15em;
-    padding-left: 9em;
-    padding-right: 9em;
-    padding-bottom: 2em;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    
+}
+
+.row {
+    padding-top: .5em;
+    padding-bottom: 1.5em;
 }
 
 p {
     padding: .6em;
-    font-size: 1.5em;
+    font-size: 1.4em;
+    font-family: 'Cardo', serif;
 }
+

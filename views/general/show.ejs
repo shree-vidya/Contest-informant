@@ -16,14 +16,14 @@
             <p style="text-align-last: right;"><strong>Submitted by :</strong>  <%= event.author.username %></p>
 
             <% if(currentuser && event.author.id.equals(currentuser._id)){ %>
-                <button class="btn btn-outline btn-light btn-lg" ><a style="color:#000;" href="/coding/<%= event._id%>/edit">Edit</a></button>
-                <form class="delete-form" style="color:#000;" action="/coding/<%= event._id %>?_method=DELETE" method="POST">
+                <button class="btn btn-outline btn-light btn-lg" ><a style="color:#000;" href="/general/<%= event._id%>/edit">Edit</a></button>
+                <form class="delete-form" style="color:#000;" action="/general/<%= event._id %>?_method=DELETE" method="POST">
                     <button class="btn btn-outline btn-light btn-lg">
                         Delete 
                     </button>
                 </form>
             <% } %>
-            <h4> <a style="color:white; text-align:center; " href="/coding">Go Back</a> </h4>
+            <h4> <a style="color:white; text-align:center; " href="/general">Go Back</a> </h4>
         </div>
     </div>
 </div>

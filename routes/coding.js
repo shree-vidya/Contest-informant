@@ -48,7 +48,7 @@ router.get("/coding/:id",function(req,res){
 	});
 })
 
-router.get("/coding/:id/edit", middleware.checkowner, function(req,res){
+router.get("/coding/:id/edit", middleware.checkcodingowner, function(req,res){
 	
 	Coding.findById(req.params.id, function(err, foundevent ){
 	if(err){
@@ -59,8 +59,8 @@ router.get("/coding/:id/edit", middleware.checkowner, function(req,res){
 	})	
 });	
 
-router.put("/coding/:id", middleware.checkowner, function(req,res){
-	Coding.findByIdAndUpdate(req.params.id, req.body.event, function(err, updatedcamp){
+router.put("/coding/:id", middleware.checkcodingowner, function(req,res){
+	Coding.findByIdAndUpdate(req.params.id, req.body.event, function(err, updatedevent){
 		if(err){
 			res.redirect("/coding");
 		} else {
@@ -69,7 +69,7 @@ router.put("/coding/:id", middleware.checkowner, function(req,res){
 	})
 })
 
-router.delete("/coding/:id", middleware.checkowner, function(req, res){
+router.delete("/coding/:id", middleware.checkcodingowner, function(req, res){
     Coding.findByIdAndRemove(req.params.id , function(err){
 		if(err){
 			console.log(err)

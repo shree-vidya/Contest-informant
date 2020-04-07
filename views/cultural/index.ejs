@@ -1,11 +1,11 @@
 <%- include('../partials/header-index') %>
 
 <div class="container">
-    <header class="jumbotron row text-center" style="background-image: url(https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX23310840.jpg);">
-         <h1><i style="font-size: .7em;" class="fa fa-code" aria-hidden="true"></i> Coding competitions</h1>
-        <h3>Keep calm and keep coding</h3>
+    <header class="jumbotron row text-center" style="opacity:0.8; background-image: url(https://naldzgraphics.net/wp-content/uploads/2013/02/38-vintage-note-free-musical-repeat-seamless-pattern.jpg);">
+         <h1 style="opacity:1; color: white; text-shadow: 2px 2px 8px #000;">Dance and Music competitions</h1>
+        <h3 style="opacity:1; color: white; text-shadow: 2px 2px 8px #000;">If the music is good, you dance</h3>
         <p>
-            <a class="newEvent btn btn-primary btn-lg" href="/coding/new">Add new event</a>	
+            <a class="newEvent btn btn-primary btn-lg" href="/cultural/new">Add new event</a>	
         </p>
     </header>
 
@@ -20,7 +20,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Hosted by <%= event.venue %></h4>
                         <h4 class="card-text">The event is going to be held on <%= event.date %></h4>
-                        <p> <a href="/coding/<%= event._id %>" class="detail btn btn-small btn-primary">More details</a> </p>
+                        <p> <a href="/cultural/<%= event._id %>" class="detail btn btn-small btn-primary">More details</a> </p>
                      </div>
                 </div>
             <% }); %>

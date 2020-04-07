@@ -8,13 +8,20 @@ h1 {
     color: #000;
 }
 
+h3 {
+    font-family: 'Pacifico', cursive;
+}
+
 
 .newEvent {
     background-color: #00264d;
+    margin-top: 1em;
 }
 
 .container {
     margin-bottom: 3em;
+    display: grid;
+    justify-content: center;
 }
 
 .card{

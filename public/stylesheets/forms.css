@@ -15,28 +15,39 @@
     
 }
 
-
+.row {
+  display: flex;
+  justify-content: center;
+}
 
 .form-header {
     z-index: 1;
     position: relative;
     text-align: center;
-    padding-top: 10vh;
+    padding-top: 5vh;
   }
 
 .form-header h1 {
+  
+  text-align: center;
     font-size: 3em;
-    font-weight: 500;
-    font-family: inherit;
+    font-weight: 700;
+    font-family: 'Play', sans-serif;
     color: #333;
     text-shadow: 2px 2px 4px whitesmoke;
     border: powderblue;
     padding-bottom: .1em;
+    
   }
 
   .form-group {
       margin: 2em auto;
   }
 
-  
+  form {
+    padding: 1.5em;
+  }
 
+  .form-control {
+    border: 2px solid rgb(150, 137, 137);
+  }

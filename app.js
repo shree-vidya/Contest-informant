@@ -7,12 +7,17 @@ var localstrategy = require("passport-local");
 var methodoverride = require("method-override");
 var flash = require("connect-flash");
 
-var Coding = require("./models/coding.js");
 var Users = require("./models/user.js");
+var Coding = require("./models/coding.js");
+var Art = require("./models/art.js");
+var Cultural = require("./models/cultural.js");
+var General = require("./models/general.js");
 
-var codingroutes = require("./routes/coding.js")
 var authroutes = require("./routes/auth.js")
-
+var codingroutes = require("./routes/coding.js")
+var artroutes = require("./routes/art.js")
+var culturalroutes = require("./routes/cultural.js")
+var generalroutes = require("./routes/general.js")
 
 mongoose.connect("mongodb+srv://shreevidya:shreevidya123@cluster0-o44xt.mongodb.net/test?retryWrites=true&w=majority", {
 	useUnifiedTopology: true,
@@ -51,6 +56,10 @@ app.use(function(req ,res ,next ){
 
 app.use(authroutes);
 app.use(codingroutes);
+app.use(artroutes);
+app.use(culturalroutes);
+app.use(generalroutes);
+
 
 app.listen(3000,function(err){
     if(err) {
