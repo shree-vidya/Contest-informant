@@ -20,7 +20,8 @@ router.post("/signup",function(req,res){
 			return res.render("signup.ejs")
 		}
 		passport.authenticate("local")(req, res, function(){
-            req.flash("success","Welcome to Contest Informant"+req.body.username );
+			req.flash("success","Welcome to Contest Informant"+req.body.username );
+			console.log(req.body.username );
 			res.redirect("/");
 		})
 	})
