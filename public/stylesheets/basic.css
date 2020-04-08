@@ -37,13 +37,18 @@ body {
   }
 
  .btn{
+   color:black;
+   background-color: rgb(139, 122, 94)
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.5em;
-    border: inset;
-    border: black;
+    font-weight: 400;
+    border:2px solid black;
      width: 20em;
  }
 
+ button {
+   padding: 0 0;
+ }
   .slideshow { 
     position: fixed;
     width: 100%;
@@ -67,7 +72,7 @@ body {
     background-repeat: no-repeat;
     opacity: 0;
     z-index: 0;
-    animation: imageAnimation 25s linear infinite; 
+    animation: imageAnimation 100s linear infinite; 
   }
   
   .slideshow li:nth-child(1) { 
@@ -75,19 +80,19 @@ body {
   }
   .slideshow li:nth-child(2) { 
     background-image: url(https://images.unsplash.com/photo-1460398495418-62c9b5d79fbf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
-    animation-delay: 05s; 
+    animation-delay: 20s; 
   }
   .slideshow li:nth-child(3) { 
     background-image: url(https://images.unsplash.com/photo-1583558952124-8a5c7f29ab35?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
-    animation-delay: 10s; 
+    animation-delay: 40s; 
   }
   .slideshow li:nth-child(4) { 
     background-image: url(https://images.unsplash.com/photo-1523875194681-bedd468c58bf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
-    animation-delay: 15s; 
+    animation-delay: 60s; 
   }
   .slideshow li:nth-child(5) { 
     background-image: url(https://images.unsplash.com/photo-1457052002176-2d16a4f4a3ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
-    animation-delay: 20s; 
+    animation-delay: 80s; 
   }
   
   @keyframes imageAnimation { 
