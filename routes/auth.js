@@ -1,8 +1,8 @@
-var express = require ("express");
-var router = express.Router();
-var Coding = require("../models/coding.js");
-var passport = require("passport");
-var Users = require("../models/user");
+var express 	= require ("express");
+var router	    = express.Router();
+var Coding      = require("../models/coding.js");
+var passport    = require("passport");
+var Users       = require("../models/user");
 
 router.get("/",function(req,res){
     res.render("basic")
@@ -20,7 +20,7 @@ router.post("/signup",function(req,res){
 			return res.render("signup.ejs")
 		}
 		passport.authenticate("local")(req, res, function(){
-            req.flash("success","Welcome to Contest Informant "+req.body.username );
+            req.flash("success","Welcome to Contest Informant"+req.body.username );
 			res.redirect("/");
 		})
 	})
