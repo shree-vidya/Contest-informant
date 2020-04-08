@@ -64,4 +64,8 @@ app.use(generalroutes);
 var port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("Server Has Started!");
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> c9c6804eb8bca53fffe197668d01cde42c7e1597
