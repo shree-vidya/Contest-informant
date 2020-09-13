@@ -41,17 +41,6 @@ router.post("/login", passport.authenticate("local",
 	function(req,res){	
 });
 
-// router.get('/google/signup', passport.authenticate('google', {
-//     scope: ['profile']
-// }), function(req,res){
-// 	Users.findOne({password: profile.id}).then((currentUser) => {
-//         if(currentUser){
-//             // already have this user
-//             console.log('user hWEKJFHew;iut is: ', currentUser);
-//             res.redirect("/");
-//         } 
-// });
-
 global.signup_auth = 0;
 global.login_auth = 0;
 global.authenticated_user = 1;
@@ -111,7 +100,6 @@ router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
 	else
 	{	
 		authenticated_user = 1;
-		req.flash("success","Welcome to Contest Informant "+req.user.username );
 		res.redirect('/');
 	}
 });
