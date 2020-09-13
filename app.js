@@ -4,6 +4,8 @@ var bodyParser = require ("body-parser");
 var mongoose = require('mongoose');
 var passport = require("passport");
 var localstrategy = require("passport-local");
+var GoogleStrategy = require("passport-google-oauth20");
+var FacebookStrategy = require('passport-facebook').Strategy;
 var methodoverride = require("method-override");
 var flash = require("connect-flash");
 
@@ -43,12 +45,72 @@ app.use(require("express-session")({
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new localstrategy(Users.authenticate()));
+
+global.new_user = 0;
+
+passport.use(
+  new GoogleStrategy({
+    callbackURL: '/google/redirect',
+      clientID: '769708276592-rhdk237rqa3f12lbi2ancnroajkmvrl5.apps.googleusercontent.com',
+      clientSecret: 'xRqp4l5DVU-QB7Crjuri0Ges'
+    }, (accessToken, refreshToken, profile, done) => {
+      console.log('passport callback function fired:');
+      Users.findOne({password: profile.id}).then((currentUser) => {
+        if(currentUser){
+            console.log('user is: ', currentUser);
+            done(null, currentUser)
+        } else {
+            new_user = 1; 
+            if(signup_auth)
+            {
+              new Users({
+                password: profile.id,
+                username: profile.displayName
+            }).save().then((newUser) => {
+                console.log('created new user: ', newUser);
+                done(null, newUser);
+            });
+            }    
+        }
+    });
+})
+);
+
+passport.use(
+  new FacebookStrategy({
+      clientID: '640547306831821',
+      clientSecret: '15098f1cf4d78809fee01f443325f57b',
+      callbackURL: 'http://localhost:3000/facebook/redirect'
+    }, (accessToken, refreshToken, profile, done) => {
+      console.log('passport callback function fired:');
+      Users.findOne({password: profile.id}).then((currentUser) => {
+        if(currentUser){
+            console.log('user is: ', currentUser);
+            done(null, currentUser)
+        } else {
+            new_user = 1; 
+            if(signup_auth)
+            {
+              new Users({
+                password: profile.id,
+                username: profile.displayName
+            }).save().then((newUser) => {
+                console.log('created new user: ', newUser);
+                done(null, newUser);
+            });
+            }    
+        }
+    });
+})
+);
+
 passport.serializeUser(Users.serializeUser());
 passport.deserializeUser(Users.deserializeUser());
 
 
 app.use(function(req ,res ,next ){
     res.locals.currentuser = req.user;
+    res.locals.authenticated_user = authenticated_user;
     res.locals.error = req.flash("error");
 	res.locals.success = req.flash("success");
 	next();

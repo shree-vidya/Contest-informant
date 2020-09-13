@@ -90,7 +90,7 @@ middlewareobj.checkgeneralowner =  function(req, res, next){
 }
 
 middlewareobj.isloggedin =  function(req, res, next){
-	if(req.isAuthenticated()){
+	if(req.isAuthenticated()  && authenticated_user){
 		return next();
 	} else {
         req.flash("error","You need to be logged in to do that");
