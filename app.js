@@ -68,9 +68,9 @@ passport.use(
                 username: profile.displayName
             }).save().then((newUser) => {
                 console.log('created new user: ', newUser);
-                done(null, newUser);
+                
             });
-            }    
+            }    done(null, newUser);
         }
     });
 })
