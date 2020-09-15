@@ -1,7 +1,7 @@
-var express = require ("express");
-var router = express.Router();
-var Cultural = require("../models/cultural.js");
-var middleware = require("../middleware")
+const express = require ("express");
+const router = express.Router();
+const Cultural = require("../models/cultural.js");
+const middleware = require("../middleware")
 
 
 router.get("/cultural",function(req,res){

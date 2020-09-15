@@ -1,8 +1,8 @@
-var Coding = require("../models/coding.js");
-var Art = require("../models/art.js");
-var Cultural = require("../models/cultural.js");
-var General = require("../models/general.js")
-var middlewareobj = {};
+const Coding = require("../models/coding.js");
+const Art = require("../models/art.js");
+const Cultural = require("../models/cultural.js");
+const General = require("../models/general.js")
+const middlewareobj = {};
 
 
 middlewareobj.checkcodingowner =  function(req, res, next){

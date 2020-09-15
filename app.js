@@ -1,25 +1,25 @@
-var express = require ("express");
-var app = express();
-var bodyParser = require ("body-parser");
-var mongoose = require('mongoose');
-var passport = require("passport");
-var localstrategy = require("passport-local");
-var GoogleStrategy = require("passport-google-oauth20");
-var FacebookStrategy = require('passport-facebook').Strategy;
-var methodoverride = require("method-override");
-var flash = require("connect-flash");
+const express = require ("express");
+const app = express();
+const bodyParser = require ("body-parser");
+const mongoose = require('mongoose');
+const passport = require("passport");
+const localstrategy = require("passport-local");
+const GoogleStrategy = require("passport-google-oauth20");
+const FacebookStrategy = require('passport-facebook').Strategy;
+const methodoverride = require("method-override");
+const flash = require("connect-flash");
 
-var Users = require("./models/user.js");
-var Coding = require("./models/coding.js");
-var Art = require("./models/art.js");
-var Cultural = require("./models/cultural.js");
-var General = require("./models/general.js");
+const Users = require("./models/user.js");
+const Coding = require("./models/coding.js");
+const Art = require("./models/art.js");
+const Cultural = require("./models/cultural.js");
+const General = require("./models/general.js");
 
-var authroutes = require("./routes/auth.js")
-var codingroutes = require("./routes/coding.js")
-var artroutes = require("./routes/art.js")
-var culturalroutes = require("./routes/cultural.js")
-var generalroutes = require("./routes/general.js")
+const authroutes = require("./routes/auth.js")
+const codingroutes = require("./routes/coding.js")
+const artroutes = require("./routes/art.js")
+const culturalroutes = require("./routes/cultural.js")
+const generalroutes = require("./routes/general.js")
 
 mongoose.connect("mongodb+srv://shreevidya:shreevidya123@cluster0-o44xt.mongodb.net/test?retryWrites=true&w=majority", {
 	useUnifiedTopology: true,
@@ -57,20 +57,17 @@ passport.use(
       console.log('passport callback function fired:');
       Users.findOne({password: profile.id}).then((currentUser) => {
         if(currentUser){
-            console.log('user is: ', currentUser);
+            // console.log('user is: ', currentUser);
             done(null, currentUser)
         } else {
-            new_user = 1; 
-            if(signup_auth)
-            {
+            new_user = 1;         
               new Users({
                 password: profile.id,
                 username: profile.displayName
             }).save().then((newUser) => {
-                console.log('created new user: ', newUser);
+                // console.log('created new user: ', newUser);
                 done(null, newUser);
             });
-            }    
         }
     });
 })
@@ -80,25 +77,24 @@ passport.use(
   new FacebookStrategy({
       clientID: '640547306831821',
       clientSecret: '15098f1cf4d78809fee01f443325f57b',
-      callbackURL: 'https://contest-informant.herokuapp.com/facebook/redirect'
+      callbackURL: 'https://http://contest-informant.herokuapp.com//facebook/redirect'
     }, (accessToken, refreshToken, profile, done) => {
       console.log('passport callback function fired:');
       Users.findOne({password: profile.id}).then((currentUser) => {
         if(currentUser){
-            console.log('user is: ', currentUser);
+            // console.log('user is: ', currentUser);
             done(null, currentUser)
         } else {
             new_user = 1; 
-            if(signup_auth)
-            {
               new Users({
                 password: profile.id,
                 username: profile.displayName
             }).save().then((newUser) => {
-                console.log('created new user: ', newUser);
+                // console.log('created new user: ', newUser);
                 done(null, newUser);
             });
-            }    
+            
+               
         }
     });
 })

@@ -1,7 +1,7 @@
-var express = require ("express");
-var router = express.Router();
-var Coding = require("../models/coding.js");
-var middleware = require("../middleware")
+const express = require ("express");
+const router = express.Router();
+const Coding = require("../models/coding.js");
+const middleware = require("../middleware")
 
 
 router.get("/coding",function(req,res){

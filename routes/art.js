@@ -1,7 +1,7 @@
-var express = require ("express");
-var router = express.Router();
-var Art = require("../models/art.js");
-var middleware = require("../middleware")
+const express = require ("express");
+const router = express.Router();
+const Art = require("../models/art.js");
+const middleware = require("../middleware")
 
 
 router.get("/art",function(req,res){

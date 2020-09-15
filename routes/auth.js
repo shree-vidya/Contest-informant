@@ -1,8 +1,8 @@
-var express 	= require ("express");
-var router	    = express.Router();
-var Coding      = require("../models/coding.js");
-var passport    = require("passport");
-var Users       = require("../models/user");
+const express 	= require ("express");
+const router	    = express.Router();
+const Coding      = require("../models/coding.js");
+const passport    = require("passport");
+const Users       = require("../models/user");
 
 router.get("/",function(req,res){
     res.render("basic")
@@ -84,11 +84,15 @@ router.get('/facebook/signup',function(req,res,next){
 
 router.get('/google/redirect', passport.authenticate('google'), (req, res) => {	
 	console.log(new_user);
+	
 	if(new_user && login_auth)
-	{
-	req.flash("error", "You need to sign up first!");
-	authenticated_user = 0;
-	res.redirect("/signup");
+	{	req.flash("error", "You need to sign up first!");
+		authenticated_user = 0;
+		Users.deleteOne({_id: req.user._id}, 
+			function(err){
+			 if(err) res.json(err);
+			 else    res.redirect("/signup");;
+		 });	
 	}
 	else
 	if(!new_user && signup_auth)
@@ -105,16 +109,16 @@ router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
 });
 
 router.get('/facebook/redirect', passport.authenticate('facebook'), (req, res) => {	
-	console.log('arkuthawriut')
-	console.log(new_user);
-	console.log(login_auth)
-	console.log(signup_auth)
-	console.log(req)
+	
 	if(new_user && login_auth)
 	{
-	req.flash("error", "You need to sign up first!");
-	authenticated_user = 0;
-	res.redirect("/signup");
+		req.flash("error", "You need to sign up first!");
+		authenticated_user = 0;
+		Users.deleteOne({_id: req.user._id}, 
+			function(err){
+			 if(err) res.json(err);
+			 else    res.redirect("/signup");;
+		 });
 	}
 	else
 	if(!new_user && signup_auth)

@@ -1,7 +1,7 @@
-var express = require ("express");
-var router = express.Router();
-var General = require("../models/general.js");
-var middleware = require("../middleware")
+const express = require ("express");
+const router = express.Router();
+const General = require("../models/general.js");
+const middleware = require("../middleware")
 
 
 router.get("/general",function(req,res){
