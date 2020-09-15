@@ -77,7 +77,7 @@ passport.use(
   new FacebookStrategy({
       clientID: '640547306831821',
       clientSecret: '15098f1cf4d78809fee01f443325f57b',
-      callbackURL: 'https://contest-informant.herokuapp.com//facebook/redirect'
+      callbackURL: 'https://contest-informant.herokuapp.com/facebook/redirect'
     }, (accessToken, refreshToken, profile, done) => {
       console.log('passport callback function fired:');
       Users.findOne({password: profile.id}).then((currentUser) => {
