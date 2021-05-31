@@ -8,7 +8,7 @@
 
 ## Description
 
-* Home page helps user to navigate to the specific domain of intrest.
+* Home page helps user to navigate to the specific domain of interest.
 * User can view the list of competitions without logging in.
 * One must be logged in to post an event.
 * User can only edit the event posted by him.
