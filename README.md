@@ -4,11 +4,18 @@
 
 ## Purpose
 
-> Advertising about a college event in colleges in different places is difficult. Hence the event organisers can post their event details in their website and update its details accordingly. It makes advertising about the competetion easy for event organisers. Students can find details about competetions going on in various college in one place.
+> Advertising about a college event in colleges in different places is difficult. Hence the event organisers can post their event details in their website and update its details accordingly. It makes advertising about the competition easy for event organisers. Students can find details about competitions going on in various college in one place.
 
-## Features
+## Description
 
-* Website URL – [http://agile-ocean-22562.herokuapp.com/]
+* Home page helps user to navigate to the specific domain of intrest.
+* User can view the list of competitions without logging in.
+* One must be logged in to post an event.
+* User can only edit the event posted by him.
+
+### Features
+
+* Website URL – http://agile-ocean-22562.herokuapp.com/
 
 * System architecture – **MVC architecture**
 
