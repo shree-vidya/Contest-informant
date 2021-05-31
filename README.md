@@ -35,22 +35,23 @@
 
 * Clone Git repository into desired location on your device.
 ```bash
-git clone https://github.com/shree-vidya/Contest-informant.git
-cd
+ git clone https://github.com/shree-vidya/Contest-informant.git
+ cd Contest-informant
 ```
 
 * Install the required dependencies
 ```bash
-npm init
-npm install express express-session body-parser ejs connect-flash dotenv method-override mongoose passport passport-facebook passport-google-oauth20 passport-local passport-local-mongoose --save
+ npm init
+ npm install express express-session body-parser ejs connect-flash dotenv method-override --save
+ npm install mongoose passport passport-facebook passport-google-oauth20 passport-local passport-local-mongoose --save
 ```
 
 * Run Node.js server
 ```bash
-node app.js
+ node app.js
 ```
 
-* The website is available on 'http://localhost:3000' 
+* The website is available at http://localhost:3000
 
 
 
