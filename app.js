@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require ("express");
 const app = express();
 const bodyParser = require ("body-parser");
@@ -21,7 +22,7 @@ const artroutes = require("./routes/art.js")
 const culturalroutes = require("./routes/cultural.js")
 const generalroutes = require("./routes/general.js")
 
-mongoose.connect("mongodb+srv://shreevidya:shreevidya123@cluster0-o44xt.mongodb.net/test?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://shreevidya:"+process.env.MONGO_DB_PASSWORD+"@cluster0-o44xt.mongodb.net/test?retryWrites=true&w=majority", {
 	useUnifiedTopology: true,
 	useNewUrlParser: true,
 	useCreateIndex: true
